@@ -5,7 +5,7 @@ license: MIT
 compatibility: Funktioniert in jedem Assistenten mit Agent Skills. Für die Bestell-API braucht es Python 3 und Internetzugang zu hostbox.ch; ohne Internet erzeugt das Skript einen Bestell-Link.
 metadata:
   author: HostBox
-  version: "1.0.1"
+  version: "1.0.2"
   homepage: https://hostbox.ch/ratgeber/webseite-mit-ki-bestellen
 ---
 
@@ -84,7 +84,7 @@ Beim Bestell-Link gibt es keinen Stand für Sie. Der Mensch sieht den Fortschrit
 - **Vorher fragen: Wo liegt die E-Mail?** Liegt sie bei einem anderen Anbieter (z. B. Microsoft 365, Google Workspace), soll sich der Mensch vor dem Umstellen beim HostBox-Support melden (https://hostbox.ch/portal/support), damit die Mail-Einträge übernommen werden. Sonst geht E-Mail verloren.
 - **Alternative**, wenn der Mensch seine DNS-Einträge selbst verwalten will: A-Einträge für `@` und `www` auf `92.205.167.242`.
 - Nach Minuten bis 24 Stunden ist die Seite erreichbar, das SSL-Zertifikat folgt automatisch. Das Kundenportal zeigt an, sobald die Domain auf HostBox zeigt.
-- **Automatische Updates:** Im Kundenportal steht unter Git die Webhook-Adresse. Bei GitHub unter Settings → Webhooks → Add webhook eintragen (Content type `application/json`, «Just the push event»). Danach geht jeder Push automatisch online.
+- **Automatische Updates:** Die Webhook-Adresse steht im Kundenportal unter Git, und mit dem Kunden-Token liefert sie auch `python3 scripts/hostbox.py service <id>` bzw. `GET /api/v1/services/<id>` unter `resources` (kind `git`, `details.webhook`; bei privaten Repositories zusätzlich `details.publicKey` als Deploy-Schlüssel, nur lesend). Bei GitHub unter Settings → Webhooks → Add webhook eintragen (Content type `application/json`, «Just the push event») – selbst nur mit ausdrücklicher Zustimmung des Menschen und nur, wenn du GitHub-Zugang hast. Danach geht jeder Push automatisch online.
 - **Neue Domain bei HostBox:** Die Registrierungsgebühr nennt HostBox vor der Registrierung separat.
 - Hilfe: https://hostbox.ch/kontakt
 

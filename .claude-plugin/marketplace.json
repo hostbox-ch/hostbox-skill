@@ -1,7 +1,7 @@
 {
   "name": "hostbox",
   "owner": { "name": "HostBox", "url": "https://hostbox.ch" },
-  "metadata": { "description": "Skills von HostBox, dem Schweizer Hosting für Webseiten aus der KI." },
+  "metadata": { "description": "Skills von HostBox (hostbox.ch), Schweizer Anbieter für Hosting von Webseiten aus der KI, Server in der EU." },
   "plugins": [
     {
       "name": "hostbox-webseite",

@@ -6,6 +6,7 @@ Befehle:
   order    Bestellung über die Bestell-API vorbereiten -> Bestätigungs-Link für den Menschen
   status   Stand der Bestellung abfragen (--wait: warten bis bezahlt und eingerichtet)
   services Eigene Hostings auflisten (braucht Kunden-Token)
+  service  Ein Hosting mit Git-Webhook und Deploy-Schlüssel (braucht Kunden-Token)
   job      Stand eines Auftrags (braucht Kunden-Token)
   deploy   Neu ausrollen (braucht Kunden-Token)
 
@@ -204,6 +205,22 @@ def cmd_services(a):
         print(f"{s['id']}: {s['domain']} – {s['plan']} – {s['status']}")
 
 
+def cmd_service(a):
+    status, d = _request("GET", f"/api/v1/services/{a.service_id}", token=_token())
+    if status != 200:
+        _fail(status, d)
+    s = d["service"]
+    print(f"{s['id']}: {s['domain']} – {s.get('planName', s.get('plan'))} – {s['status']}")
+    for r in s.get("resources", []):
+        print(f"  {r['kind']}: {r['name']} ({r['status']})")
+        det = r.get("details") or {}
+        if r["kind"] == "git":
+            if det.get("webhook"):
+                print(f"    Webhook für GitHub (Content type application/json, nur push): {det['webhook']}")
+            if det.get("publicKey"):
+                print(f"    Deploy-Schlüssel (bei GitHub nur lesend hinterlegen): {det['publicKey']}")
+
+
 def cmd_job(a):
     status, d = _request("GET", f"/api/v1/jobs/{a.id}", token=_token())
     if status != 200:
@@ -242,13 +259,15 @@ def main():
     st.add_argument("--wait", action="store_true")
     st.add_argument("--timeout", type=int, default=30, help="Minuten (mit --wait)")
     sub.add_parser("services", help="Eigene Hostings")
+    sp = sub.add_parser("service", help="Ein Hosting mit Webhook und Deploy-Schlüssel")
+    sp.add_argument("service_id", type=int)
     j = sub.add_parser("job", help="Stand eines Auftrags")
     j.add_argument("id", type=int)
     dp = sub.add_parser("deploy", help="Neu ausrollen")
     dp.add_argument("service_id", type=int)
 
     a = p.parse_args()
-    {"link": cmd_link, "order": cmd_order, "status": cmd_status, "services": cmd_services, "job": cmd_job, "deploy": cmd_deploy}[a.cmd](a)
+    {"link": cmd_link, "order": cmd_order, "status": cmd_status, "services": cmd_services, "service": cmd_service, "job": cmd_job, "deploy": cmd_deploy}[a.cmd](a)
 
 
 if __name__ == "__main__":

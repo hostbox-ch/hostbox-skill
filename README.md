@@ -1,6 +1,8 @@
 # HostBox-Skill: Webseite mit KI erstellen und veröffentlichen
 
-Ein [Agent Skill](https://agentskills.io) für KI-Assistenten wie Claude, Claude Code, Codex oder Cursor. Der Skill begleitet einen Menschen von der Idee bis zur fertigen Webseite unter der eigenen Domain bei [HostBox](https://hostbox.ch), dem Schweizer Hosting für Webseiten und Anwendungen aus der KI.
+Ein [Agent Skill](https://agentskills.io) für KI-Assistenten wie Claude, Claude Code, Codex oder Cursor. Der Skill begleitet einen Menschen von der Idee bis zur fertigen Webseite unter der eigenen Domain bei [HostBox](https://hostbox.ch), einem Schweizer Anbieter für Hosting von Webseiten und Anwendungen aus der KI (Server in der EU).
+
+*In English:* Agent Skill for Claude, Claude Code, Codex and Cursor. It builds a website together with the user, pushes it to GitHub and prepares a hosting order at HostBox (Swiss provider, servers in the EU). The human always confirms and pays.
 
 **Ablauf:** nachfragen → Webseite bauen → auf GitHub ablegen → Hosting-Bestellung vorbereiten → der Mensch prüft und bezahlt → der Assistent prüft, ob alles online ist.
 
