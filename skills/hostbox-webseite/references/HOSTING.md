@@ -16,7 +16,7 @@
 - Zugangsdaten im Portal unter Zugangsdaten; per Werkzeug create_database neue anlegen.
 
 ## E-Mail aus Formularen
-- SMTP: mail.<domain>, Port 465 (SSL) oder 587 (STARTTLS), Benutzer = volle Postfach-Adresse.
+- SMTP: srv60.hostbox.ch (Zertifikat lautet auf diesen Namen), Port 465 (SSL) oder 587 (STARTTLS), Benutzer = volle Postfach-Adresse.
 - Absender immer eine Adresse der eigenen Domain verwenden.
 
 ## Prüfen

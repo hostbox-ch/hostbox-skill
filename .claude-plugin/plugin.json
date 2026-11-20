@@ -1,6 +1,6 @@
 {
   "name": "hostbox-webseite",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Webseite mit Ihrem KI-Assistenten erstellen, auf GitHub ablegen, Hosting bei HostBox (hostbox.ch) vorbereiten und veröffentlichen. Bezahlen und AGB bleiben beim Menschen.",
   "author": { "name": "HostBox", "url": "https://hostbox.ch" },
   "homepage": "https://hostbox.ch/agenten#skill",

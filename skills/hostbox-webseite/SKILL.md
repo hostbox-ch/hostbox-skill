@@ -5,7 +5,7 @@ license: MIT
 compatibility: Funktioniert in jedem Assistenten mit Agent Skills. Für die Bestell-API braucht es Python 3 und Internetzugang zu hostbox.ch; ohne Internet erzeugt das Skript einen Bestell-Link.
 metadata:
   author: HostBox
-  version: "1.0.3"
+  version: "1.0.4"
   homepage: https://hostbox.ch/ratgeber/webseite-mit-ki-bestellen
 ---
 
