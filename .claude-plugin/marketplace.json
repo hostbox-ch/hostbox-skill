@@ -1,0 +1,12 @@
+{
+  "name": "hostbox",
+  "owner": { "name": "HostBox", "url": "https://hostbox.ch" },
+  "metadata": { "description": "Skills von HostBox, dem Schweizer Hosting für Webseiten aus der KI." },
+  "plugins": [
+    {
+      "name": "hostbox-webseite",
+      "source": "./",
+      "description": "Webseite erstellen, auf GitHub ablegen und bei HostBox veröffentlichen."
+    }
+  ]
+}
