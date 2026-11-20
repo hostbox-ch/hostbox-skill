@@ -3,9 +3,9 @@
 
 ## Laufzeiten
 - Statisch (HTML/CSS/JS): Dateien landen im Zielordner (Standard: httpdocs). Bei Build-Tools (Vite, Astro) das Build-Ergebnis (dist/) deployen oder den Zielordner auf dist setzen.
-- PHP 8.3: index.php im Zielordner. Composer-Abhängigkeiten committen oder per Deploy-Aktion installieren.
-- Node.js 22 (ab Box App): package.json mit "start"-Skript. Die App muss auf process.env.PORT hören. Startdatei z. B. server.js oder .next/standalone/server.js.
-- Python 3.12 (ab Box App): requirements.txt und eine WSGI/ASGI-App (app.py mit Variable "app").
+- PHP 8 (derzeit 8.4, wird aktuell gehalten): index.php im Zielordner. Composer-Abhängigkeiten committen oder per Deploy-Aktion installieren.
+- Node.js (ab Box App): package.json mit "start"-Skript. Die App muss auf process.env.PORT hören. Startdatei z. B. server.js oder .next/standalone/server.js.
+- Python 3 (ab Box App): requirements.txt und eine WSGI/ASGI-App (app.py mit Variable "app").
 
 ## Deployment
 - Git: Repository im Portal verbinden. Jeder Push auf den Branch wird ausgerollt (Webhook bei GitHub/GitLab hinterlegen).
