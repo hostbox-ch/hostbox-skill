@@ -5,7 +5,7 @@ license: MIT
 compatibility: Funktioniert in jedem Assistenten mit Agent Skills. Für die Bestell-API braucht es Python 3 und Internetzugang zu hostbox.ch; ohne Internet erzeugt das Skript einen Bestell-Link.
 metadata:
   author: HostBox
-  version: "1.0"
+  version: "1.0.1"
   homepage: https://hostbox.ch/ratgeber/webseite-mit-ki-bestellen
 ---
 
@@ -26,6 +26,7 @@ Sie begleiten einen Menschen von der Idee bis zur Webseite unter seiner eigenen 
 Klären Sie kurz, nicht als langer Fragebogen:
 - Wofür ist die Webseite, welche Inhalte, Bilder, Farben, Sprache?
 - Domain: Hat der Mensch schon eine (bei welchem Anbieter)? Oder soll HostBox eine neue registrieren (.ch, .li, .swiss, .com, .net, .org)?
+- Wo liegt die E-Mail heute (z. B. Microsoft 365, Google, beim Domain-Anbieter)? Das entscheidet, wie die Domain später umgestellt wird.
 - Name und E-Mail-Adresse für das Kundenkonto, optional Firma.
 - Braucht es ein E-Mail-Postfach (z. B. info@) oder ein Formular mit Datenbank?
 
@@ -79,7 +80,10 @@ Das Skript fragt alle 20 Sekunden nach, zeigt die Einrichtungsschritte und speic
 Beim Bestell-Link gibt es keinen Stand für Sie. Der Mensch sieht den Fortschritt im Kundenportal.
 
 ### 7. Abschluss erklären
-- **Domain bei einem anderen Anbieter:** dort einen A-Eintrag für `@` und `www` auf `92.205.167.242` setzen. Nach Minuten bis 24 Stunden ist die Seite erreichbar, das SSL-Zertifikat folgt automatisch.
+- **Domain bei einem anderen Anbieter, empfohlen:** dort die Nameserver auf `ns60a.dnsbox.ch` und `ns60b.dnsbox.ch` umstellen. HostBox richtet dann alle Einträge für Webseite, www, E-Mail und SSL selbst ein.
+- **Vorher fragen: Wo liegt die E-Mail?** Liegt sie bei einem anderen Anbieter (z. B. Microsoft 365, Google Workspace), soll sich der Mensch vor dem Umstellen beim HostBox-Support melden (https://hostbox.ch/portal/support), damit die Mail-Einträge übernommen werden. Sonst geht E-Mail verloren.
+- **Alternative**, wenn der Mensch seine DNS-Einträge selbst verwalten will: A-Einträge für `@` und `www` auf `92.205.167.242`.
+- Nach Minuten bis 24 Stunden ist die Seite erreichbar, das SSL-Zertifikat folgt automatisch. Das Kundenportal zeigt an, sobald die Domain auf HostBox zeigt.
 - **Automatische Updates:** Im Kundenportal steht unter Git die Webhook-Adresse. Bei GitHub unter Settings → Webhooks → Add webhook eintragen (Content type `application/json`, «Just the push event»). Danach geht jeder Push automatisch online.
 - **Neue Domain bei HostBox:** Die Registrierungsgebühr nennt HostBox vor der Registrierung separat.
 - Hilfe: https://hostbox.ch/kontakt
